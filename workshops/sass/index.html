@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Level Up Your Sass</title>
+
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section class="dark" data-background-color="#036">
+                    <h1>Level Up <br/>Your Sass</h1>
+                    <p>
+                        <small>Created by <a target="_blank" href="http://jackiekeiser.com">Jackie Keiser</a><!--  / <a target="_blank" href="http://twitter.com/mongoosedoom">@mongoosedoom</a> --></small>
+                    </p>
+                </section>
+
+                <section>
+                    <p>Here's a collection of things I've learned<br/>about Sass since I started using it.</p>
+                </section>
+
+                <section>
+                    <h1>Variables</h1>
+                </section>
+
+                <section>
+                    <h2>Variable Types</h2>
+
+                    <ul>
+                        <li>Booleans</li>
+                        <li>Numbers (with or without units)</li>
+                        <li>Colors</li>
+                        <li>Strings (with or without quotes)</li>
+                        <li>Lists (comma or space seperated)</li>
+                        <li>Null</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>!default</h2>
+                    <pre>
+                        <code data-trim class="sass">
+                            $example: 'value' !default;
+                        </code>
+                    </pre>
+                    <p>You can assign variables if they are not already assigned by using !default. You can see examples of this in the Foundation framework's components files.</p>
+                </section>
+
+                <section>
+                    <h2>!default</h2>
+                    <p class="sassmeister" data-gist-id="c0cf632fe8c58d9aecfc" data-height="480"><a href="http://sassmeister.com/gist/c0cf632fe8c58d9aecfc">Play with this gist on SassMeister.</a></p>
+                </section>
+
+                <section>
+                    <h2>Interpolation</h2>
+                    <pre>
+                        <code data-trim class="none">
+$image-path: /templates/images;
+
+.example-image {
+    background-image: url('#{$image-path}/image.jpg');
+}
+                        </code>
+                    </pre>
+                    <p>Interpolation is where variables are replaced with their values within a string or expression</p>
+                </section>
+
+                <section>
+                    <h2>Interpolation</h2>
+                    <p class="sassmeister" data-gist-id="551129b5b6aa88fec104" data-height="480"><a href="http://sassmeister.com/gist/551129b5b6aa88fec104">Play with this gist on SassMeister.</a></p>
+                </section>
+
+                <section>
+                    <h1>Importing</h1>
+                </section>
+
+                <section>
+                    <h2>Importing</h2>
+                    <p>In CSS, <code>@import</code> is for linking to other stylesheets. In Sass, <code>@import</code> works with partials to actually take the the contents of a partial and insert them directly into the output CSS.</p>
+                </section>
+
+                <section>
+                    <h2>Partials</h2>
+                    <p>Partials are a special kind of Sass file. They must be imported into another stylesheet to be used and their filenames must start with an underscore.</p>
+                </section>
+
+                <section>
+                    <h2>Directory Structure</h2>
+                    <pre>
+                        <code>
+scss/
+|
+|-- partials/             # Partials
+|   |-- _buttons.scss       # buttons
+|   |-- _grids.scss         # grids
+|   |-- _home.scss          # homepage styles
+|   |-- _typography.scss    # typography
+|   |-- _variables.scss     # variables
+|   ...
+|
+|-- framework/            # Framework
+|   ...
+|
+`-- styles.scss           # Primary Sass file that imports partials
+                        </code>
+                    </pre>
+                    <p>Using a base file that imports partials helps organize files</p>
+                </section>
+
+                <section>
+                    <h1>Nesting</h1>
+                </section>
+
+                <section>
+                    <p><iframe src="//giphy.com/embed/96FloqY8aYqwo" width="500" height="235" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
+                    <p>The Inception Rule: <b>don’t go more than four levels deep.</b></p>
+                    <p>Check your output!</p>
+                </section>
+
+                <section>
+                    <h2>Nest Partials</h2>
+                    <pre>
+                        <code>
+@media #{$small-only} { // Mobile datepicker uses the popup theme
+    @import "custom/pickadate-default";
+    @import "custom/pickadate-default-date";
+}
+@media #{$medium-up} { // Tablet up datepicker uses the inline theme
+    @import "custom/pickadate-classic";
+    @import "custom/pickadate-classic-date";
+}
+                        </code>
+                    </pre>
+                    <p>I found nesting partials to be helpful when I had a plugin that needed different styles for different media queries.</p>
+                </section>
+
+                <section>
+                    <h1 class="amp">&amp;</h1>
+                </section>
+
+                <section>
+                    <h2>The almighty ampersand</h2>
+                    <p class="sassmeister" data-gist-id="28736d23422e9deb78d0" data-height="480"><a href="http://sassmeister.com/gist/28736d23422e9deb78d0">Play with this gist on SassMeister.</a></p>
+                    <p>The ampersand is a way to reference parent selectors when nesting.</p>
+                </section>
+
+                <section>
+                    <h1>Mixins vs Functions</h1>
+                </section>
+
+                <section>
+                    <h2>Mixins</h2>
+                    <p class="sassmeister" data-gist-id="89a2115763c3dca1c6bd" data-height="480"><a href="http://sassmeister.com/gist/89a2115763c3dca1c6bd">Play with this gist on SassMeister.</a></p>
+                    <p>A mixin allows you to define reusable styles. They can take arguments to manipulate those styles.</p>
+                </section>
+
+                <section>
+                    <h2>Functions</h2>
+                    <p class="sassmeister" data-gist-id="4b592aa4dec2f358a203" data-height="480"><a href="http://sassmeister.com/gist/4b592aa4dec2f358a203">Play with this gist on SassMeister.</a></p>
+                    <p>A function can also take arguments but it is meant to return a value.</p>
+                </section>
+
+                <section>
+                    <h1>Placeholders</h1>
+                </section>
+
+                <section>
+                    <h2>Placeholders</h2>
+                    <p>Placeholders are similar to mixins in that they are a group of reusable styles. The differences are that they do not accept arugments and instead of repeating the same block of styles, they group selectors together.</p>
+                </section>
+
+                <section>
+                    <h2>Placeholders</h2>
+                    <p class="sassmeister" data-gist-id="0b22b83691c65d3c7c5c" data-height="480"><a href="http://sassmeister.com/gist/0b22b83691c65d3c7c5c">Play with this gist on SassMeister.</a></p>
+                </section>
+
+                <section>
+                    <h1>Loops and Lists</h1>
+                </section>
+
+                <section>
+                    <h2>Loops</h2>
+                    <p>@for, @each, @while</p>
+                    <p class="sassmeister" data-gist-id="f83bdd34a99d75f3ebbf" data-height="480"><a href="http://sassmeister.com/gist/f83bdd34a99d75f3ebbf">Play with this gist on SassMeister.</a></p>
+                </section>
+
+                <section>
+                    <h2>Lists</h2>
+                    <pre>
+                        <code>
+$jackies-fav-colors: #9ECC16 #AA81FF #F92672;
+                        </code>
+                    </pre>
+                    <p>Lists are like arrays. In Sass they can be comma or space seperated.</p>
+                </section>
+
+                <section>
+                    <h2>Loops and Lists</h2>
+                    <p class="sassmeister" data-gist-id="d6a2cd9aeb75d5b1ef90" data-height="480"><a href="http://sassmeister.com/gist/d6a2cd9aeb75d5b1ef90">Play with this gist on SassMeister.</a></p>
+                </section>
+
+                <section>
+                    <h2>Loops and Lists</h2>
+                    <p class="sassmeister" data-gist-id="ea2ee64584f90cde8b7f" data-height="480" data-theme="tomorrow"><a href="http://sassmeister.com/gist/ea2ee64584f90cde8b7f">Play with this gist on SassMeister.</a></p>
+                </section>
+
+                <section>
+                    <h1>Command Line</h1>
+                </section>
+
+                <section>
+                    <h2>Basic Sass Watch</h2>
+                    <pre>
+                        <code>
+sass --watch input:output
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>Other Sass Options</h2>
+                    <pre>
+                        <code>
+sass --check input:output
+                        </code>
+                    </pre>
+                    <p>Only checks syntax, doesn't evaluate.</p>
+                    <pre>
+                        <code>
+sass --line-numbers input:output
+                        </code>
+                    </pre>
+                    <p>Adds comments to the generated CSS that indicates the line numbers in the Sass files.</p>
+                </section>
+
+                <section>
+                    <h2>Other Sass Options</h2>
+                    <pre>
+                        <code>
+sass --quiet input:output
+                        </code>
+                    </pre>
+                    <p>Silence warnings and status messages while compiling.</p>
+                    <pre>
+                        <code>
+sass --style NAME input:output
+                        </code>
+                    </pre>
+                    <p>Changes the style of your output. The options are nested (default), compact, compressed, or expanded.</p>
+                </section>
+
+                <section>
+                    <h2>Can't remember the Sass commands?</h2>
+                    <pre>
+                        <code>
+sass --help
+                        </code>
+                    </pre>
+                    <small><code>--help</code> or <code>-h</code> works with a lot of things in the command line. Try it out!</small>
+                </section>
+
+                <section>
+                    <h1>Source Maps</h1>
+                    <p>Debugging with Sass partials got you down?</p>
+                </section>
+
+                <section>
+                    <h2>Use Source Maps</h2>
+                    <p><b>Add --sourcemap to your sass command</b></p>
+                    <pre>
+                        <code>
+sass --watch --sourcemap sass/styles.scss:styles.css
+                        </code>
+                    </pre>
+                    <p>Source maps allow you to see the original source CSS while debugging. When you run <code>--sourcemap</code> it adds a comment to the end of the css file that links to a <code>.map</code> file it created.</p>
+                </section>
+
+                <section>
+                    <p><b>Enable source maps in your browser</b></p>
+                    <p>Chrome, Firefox, and Safari supports source maps. <br/> Check out <a href="http://thesassway.com/intermediate/using-source-maps-with-sass">Using source maps with Sass 3.3</a> on The Sass Way to find out how to enable them. <br/> <small>(http://thesassway.com/intermediate/using-source-maps-with-sass)</small></p>
+                </section>
+
+                <section>
+                    <h1>Comments</h1>
+                </section>
+
+                <section>
+                    <h2>Comments</h2>
+                    <p>Sass is useful but with the addition of variables and partials, comments are more important than ever.</p>
+                    <p>Using <code>//</code> will prevent your comments from showing up in your output. All comments are removed in compressed format.</p>
+                </section>
+
+                <section>
+                    <h2>Comments</h2>
+                    <pre>
+                        <code>
+//------------------------------------//
+//    **STOP**
+//------------------------------------//
+// This project currently uses Grunt. The grunt files have not been commited.
+// Please contact Jackie before you make changes.
+
+// Watch example
+// sass --watch styles.css:scss/styles.scss
+
+// Sass partials got you down? Add source maps for chrome
+// https://developer.chrome.com/devtools/docs/css-preprocessors
+// sass --watch --sourcemap styles.css:scss/styles.scss
+
+//------------------------------------//
+//    Contents
+//------------------------------------//
+
+// Variables that can be used globally
+@import "custom/variables";
+@import "bourbon/bourbon";
+
+// Makes browsers render all elements more consistently and in line with modern standards
+@import "normalize";
+
+// Foundation Settings
+@import "foundation/settings";
+
+// Foundation component calls. Comment out the ones that are not being used.
+@import "foundation";
+
+// All of the foundation overrides and additions
+@import "custom";
+
+//------------------------------------//
+//    General Notes on Eden Roc
+//------------------------------------//
+
+// Eden Roc is responsive and built mobile first. If you make a change, remember to
+// check on all screen sizes because it will cascade.
+
+// 320px - 767px (Mobiles, Small Tablets)
+// 768px - 1229px (Tablets, Netbooks)
+// 1230px - 1680+ (Desktop, Full-width)
+
+// - This is the only file you need to watch
+// - Media queries are nested and should follow this order:
+//      .element {
+//          Small styles
+//          @media #{$medium-up} { Medium up styles }
+//          @media #{$large-up} { Large up styles }
+//      }
+// - CSS rules with one or two properties can be on one line. Rules with more than
+//   two declarations should be on multiple lines.
+//      .example { color: #999; font-size: 12px; }
+//      .example-2 {
+//          color: #999;
+//          background-color: red;
+//          font-size: 12px;
+//      }
+// - Try to comment your code like I've done here! Use // so that it gets removed
+//   when sass compiles.
+// - Add global variables to /custom/_variables.scss. Variables specific to a
+//   certain section or partial can be declared at the top of that section or
+//   partial.
+                        </code>
+                    </pre>
+                </section>
+
+
+                <section class="white-text" data-background-image="/img/gifs/colbert-thanks.gif" data-background-color="#000" data-background-size="contain">
+                    <h2>Thanks!</h2>
+                    <!-- <p>
+                        <small>Created by <a href="http://jackiekeiser.com">Jackie Keiser</a> / <a href="http://twitter.com/mongoosedoom">@mongoosedoom</a></small>
+                    </p> -->
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script src="http://cdn.sassmeister.com/js/embed.js" async></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                backgroundTransition: 'none',
+
+                theme: 'sass', // available themes are in /css/theme
+                transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>

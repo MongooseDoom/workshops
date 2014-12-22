@@ -7,6 +7,7 @@
 - [ ] Responsive Web
 - [ ] Terminal
 - [ ] Regex
+- [ ] SVGs
 
 ## Finished
 - [x] [Grunt](http://mongoosedoom.github.io/grunt-workshop/)

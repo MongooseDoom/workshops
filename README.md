@@ -10,6 +10,6 @@
 - [ ] SVGs
 
 ## Finished
-- [x] [Grunt](http://mongoosedoom.github.io/grunt-workshop/)
-- [x] Sass
+- [x] [Grunt](http://mongoosedoom.github.io/workshops/grunt/)
+- [x] [Sass](http://mongoosedoom.github.io/workshops/sass/)
 - [x] Chrome Dev Tools

@@ -9,6 +9,6 @@
 - [ ] Regex
 
 ## Finished
-- [x] Grunt
+- [x] [Grunt](http://mongoosedoom.github.io/grunt-workshop/))
 - [x] Sass
 - [x] Chrome Dev Tools

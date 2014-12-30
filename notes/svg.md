@@ -7,6 +7,7 @@ http://danielmall.com/articles/svg-workflow-for-designers/
 http://www.sitepoint.com/add-svg-to-web-page/
 http://dbushell.com/2013/02/04/a-primer-to-front-end-svg-hacking/
 https://www.youtube.com/watch?v=lf7L8X6ZBu8 - http://slides.com/sarasoueidan/styling-animating-svgs-with-css#/
+http://css-tricks.com/lodge/svg/table-of-contents/
 
 ## Scalable Vector Graphics
 SVGs are vector graphics declared using XML.
@@ -19,11 +20,9 @@ Object > Artboards > Fit to Selected Art
 ## Optimizing
 http://petercollingridge.appspot.com/svg-editor
 
-## Using CSS with SVGs
-
 ## Using SVG
 
-### Use as an <img> source
+### Use as an <img>
 Browser Support: http://caniuse.com/#feat=svg-img
 Use this method if you don't plan to use CSS or scripting.
 
@@ -39,4 +38,4 @@ This method is best if you want to use CSS and scripting.
 
 ### Using Data URIs
 
-##
+## Using CSS with SVGs

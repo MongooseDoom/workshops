@@ -1,0 +1,55 @@
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Open Sans', sans-serif;
+$mainColor: #666666;
+$headingFont: 'Quicksand', sans-serif;
+$headingColor: #666666;
+$headingLetterSpacing: -0.08em;
+$headingTextShadow: none;
+$backgroundColor: #F9F9F9;
+$linkColor: $mainColor;
+$linkColorHover: darken( $linkColor, 20% );
+$selectionBackgroundColor: #000;
+
+// Fix links so they are not cut off
+.reveal a:not(.image) {
+	line-height: 1.3em;
+	text-decoration: underline;
+}
+
+// Background generator
+@mixin bodyBackground() {
+	background: $backgroundColor;
+}
+
+.reveal .white-text {
+	color: #fff;
+	h1, h2, h3, h4, h5, h6, a, a:not(.image) { color: #fff; }
+}
+
+.reveal pre { margin: 2em auto; }
+.reveal pre code { padding: 1em; }
+
+.reveal table.text-center th, .reveal table.text-center td { text-align: center; }
+
+table.support {
+	margin: 2em 0;
+	width: 100%;
+	th:first-child { color: #07AD91; }
+	th:last-child { color: #ea7373; }
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

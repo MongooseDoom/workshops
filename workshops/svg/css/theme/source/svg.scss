@@ -18,9 +18,13 @@ $headingColor: #666666;
 $headingLetterSpacing: -0.08em;
 $headingTextShadow: none;
 $backgroundColor: #F9F9F9;
-$linkColor: $mainColor;
-$linkColorHover: darken( $linkColor, 20% );
+$linkColor: #07AD91;
+$linkColorHover: darken( $linkColor, 10% );
 $selectionBackgroundColor: #000;
+
+#coffee-pot-external .liquid {
+	fill: #ea7373;
+}
 
 // Fix links so they are not cut off
 .reveal a:not(.image) {

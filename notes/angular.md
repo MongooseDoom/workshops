@@ -16,3 +16,13 @@ https://egghead.io/articles/new-to-angularjs-start-learning-here
 ## Binding
 
 ## Controllers
+
+
+## Todo App
+
+add todos
+remove todos
+mark complete
+
+clear completed
+sort

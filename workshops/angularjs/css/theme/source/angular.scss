@@ -13,7 +13,7 @@
 
 // Include theme-specific fonts
 @import url(../../lib/font/source-sans-pro/source-sans-pro.css);
-
+$angularRed: #d14;
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #fff;
@@ -28,8 +28,8 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
-$linkColor: #d14;
-$linkColorHover: lighten( $linkColor, 15% );
+$linkColor: lighten( $angularRed, 15% );
+$linkColorHover: darken( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
 $heading1Size: 2.5em;
@@ -42,6 +42,9 @@ section.has-dark-background {
 		color: #fff;
 	}
 }
+
+.red { color: $angularRed; }
+.reveal code {  background: lighten( $angularRed, 15% ); color: #fff; padding: 5px 10px; border-radius: 10px; border: 3px solid $angularRed; }
 
 .angular-logo .reveal { position: relative; }
 .angular-logo .reveal:after {

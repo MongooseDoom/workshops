@@ -37,6 +37,12 @@ $heading2Size: 1.6em;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
 
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Theme overrides -----------------------------
+
 section.has-dark-background {
 	&, h1, h2, h3, h4, h5, h6 {
 		color: #fff;
@@ -44,7 +50,7 @@ section.has-dark-background {
 }
 
 .red { color: $angularRed; }
-.reveal code {  background: lighten( $angularRed, 15% ); color: #fff; padding: 5px 10px; border-radius: 10px; border: 3px solid $angularRed; }
+.reveal code {  background: darken( #fff, 5% ); color: $angularRed; padding: 5px 10px; border-radius: 5px; border: 2px solid darken( #fff, 10% ); }
 
 .angular-logo .reveal { position: relative; }
 .angular-logo .reveal:after {
@@ -59,7 +65,4 @@ section.has-dark-background {
   z-index: -1;
 }
 
-
-// Theme template ------------------------------
-@import "../template/theme";
-// ---------------------------------------------
+.reveal section img { border: 0; box-shadow: none; }

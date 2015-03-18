@@ -41,14 +41,17 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Angular for Everyone!</h1>
+					<h1><span class="red">Angular</span> for Everyone!</h1>
 					<p>
 						<small>by <a href="http://jackiekeiser.com">Jackie Keiser</a> / <a href="http://twitter.com/mongoosedoom">@mongoosedoom</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>What is AngularJS?</h2>
+					<h2>
+						<img src="/img/angularjs.png" alt="AngularJS" style="width: 10%; vertical-align: middle;">
+						What is <span class="red">AngularJS</span>?
+					</h2>
 					<ul>
 						<li>Front End JavaScript Framework</li>
 						<li>For single page applications</li>
@@ -60,9 +63,6 @@
 					<h2>Why learn AngularJS?</h2>
 					<h2 class="fragment" data-fragment-index="0">Because it's <span class="red">AWESOME</span></h2>
 				</section>
-
-                <section class="has-dark-background" data-background="http://i.giphy.com/xmomNy6McGUG4.gif" data-background-color="#000">
-                </section>
 
 				<section>
 					<h2>Let's Build a <span class="red">Todo App</span></h2>
@@ -89,15 +89,9 @@
 				<section>
 					<h2>Angular Attributes</h2>
 					<p>Here are some of the attributes we'll be adding to html elements.</p>
-					<ul>
-						<li>ng-app</li>
-						<li>ng-model</li>
-						<li>ng-controller</li>
-						<li>ng-submit</li>
-						<li>ng-repeat</li>
-						<li>ng-class</li>
-						<li>ng-click</li>
-					</ul>
+					<p>
+<code>ng-app</code> <code>ng-model</code> <code>ng-controller</code> <code>ng-submit</code> <br/><br/><code>ng-repeat</code> <code>ng-class</code> <code>ng-click</code>
+					</p>
 				</section>
 
 				<section>
@@ -136,6 +130,7 @@
 
 				<section>
 					<h3>Add Todos</h3>
+					<p>Let's create a list of todos!</p>
 				</section>
 
 				<section>
@@ -146,21 +141,40 @@
 				</section>
 
 				<section>
+					<h3>Add new todos</h3>
+					<p>
+						<code>addTodos()</code>
+					</p>
+				</section>
+
+				<section>
 					<h3>What is scope?</h3>
-					<p>Scope is the glue between application controller and the view.</p>
+					<p><code>$scope</code> is the glue between application controller and the view.</p>
 				</section>
 
 				<section>
 					<h3>Remove Todos</h3>
+					<p>
+						<code>removeTodo()</code>
+					</p>
 				</section>
 
 				<section>
 					<h3>Mark Complete</h3>
+					<ol>
+						<li>We can use <code>ng-model</code> on the checkbox to change <br/>the completed status.</li>
+						<li>We can use <code>ng-class</code> to add the "complete" class <br/>to style our rows.</li>
+					</ol>
 				</section>
 
 				<section>
 					<h3><span class="red">Bonus:</span> Clear Completed</h3>
-					<p>Other ideas for your todo app:</p>
+					<p><code>filter()</code> selects a subset of items from an array and returns it as a new array.</p>
+					<small><a href="https://docs.angularjs.org/api/ng/filter/filter">https://docs.angularjs.org/api/ng/filter/filter</a></small>
+				</section>
+
+				<section>
+					<h3>Other ideas for your todo app:</h3>
 					<ul>
 						<li>Sort your todos with <a href="https://docs.angularjs.org/api/ng/filter/filter">filters</a><br/><small>(https://docs.angularjs.org/api/ng/filter/filter)</small></li>
 						<li>Mark all as complete</li>
@@ -177,10 +191,20 @@
 				</section>
 
 				<section>
-					<h2>Ionic Framework</h2>
+					<h2><img src="/img/ionic.png" alt="Ionic Framework" style="width: 60%;"></h2>
 					<p>
-						<a href="http://ionicframework.com/">http://ionicframework.com/</a><br/>
 						HTML5 native app development framework that uses Sass and Angular.js for iOS and Android.
+					</p>
+					<p>
+						<a href="http://ionicframework.com/">ionicframework.com</a><br/>
+						<small>Tutorial: <a href="https://thinkster.io/ionic-framework-tutorial/">https://thinkster.io/ionic-framework-tutorial/</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>AngularJS <span class="red">2.0</span></h2>
+					<p>
+						AngularJS is being rewritten in version 2.0 but don't let that stop you from learning it now.
 					</p>
 				</section>
 

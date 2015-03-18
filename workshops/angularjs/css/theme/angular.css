@@ -4,33 +4,6 @@
  *
  * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
  */
-section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
-  color: #fff; }
-
-.red {
-  color: #d14; }
-
-.reveal code {
-  background: #f14973;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 10px;
-  border: 3px solid #d14; }
-
-.angular-logo .reveal {
-  position: relative; }
-
-.angular-logo .reveal:after {
-  content: "";
-  background: url(/img/angularjs.png) no-repeat 50% 50%;
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1; }
-
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -283,3 +256,34 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #f14973; }
+
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff; }
+
+.red {
+  color: #d14; }
+
+.reveal code {
+  background: #f2f2f2;
+  color: #d14;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #e6e6e6; }
+
+.angular-logo .reveal {
+  position: relative; }
+
+.angular-logo .reveal:after {
+  content: "";
+  background: url(/img/angularjs.png) no-repeat 50% 50%;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
+
+.reveal section img {
+  border: 0;
+  box-shadow: none; }

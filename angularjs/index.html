@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Angular for Everyone!</title>
+
+		<meta name="description" content="Learn how to build a todo list app in AngularJS">
+		<meta name="author" content="Jackie Keiser">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/angular.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1><span class="red">Angular</span> for Everyone!</h1>
+					<p>
+						<small>by <a href="http://jackiekeiser.com">Jackie Keiser</a> / <a href="http://twitter.com/mongoosedoom">@mongoosedoom</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>
+						<img src="/img/angularjs.png" alt="AngularJS" style="width: 10%; vertical-align: middle;">
+						What is <span class="red">AngularJS</span>?
+					</h2>
+					<ul>
+						<li>Front End JavaScript Framework</li>
+						<li>For single page applications</li>
+						<li>Data is directly bound to your template</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why learn AngularJS?</h2>
+					<h2 class="fragment" data-fragment-index="0">Because it's <span class="red">AWESOME</span></h2>
+				</section>
+
+				<section>
+					<h2>Let's Build a <span class="red">Todo App</span></h2>
+					<p>Because there aren't very many of those, right?</p>
+					<p>We should be able to:</p>
+					<ul>
+						<li>Add Todos</li>
+						<li>Remove Todos</li>
+						<li>Mark Complete</li>
+						<li>Bonus: Clear Completed</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Grab a copy of the <br/>example files!</h3>
+					<p>
+						<a href="https://github.com/MongooseDoom/angular-example">https://github.com/MongooseDoom/angular-example</a>
+					</p>
+					<p>
+						<small>If you would like to see the end result,<br/>check the result branch.</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Angular Attributes</h2>
+					<p>Here are some of the attributes we'll be adding to html elements.</p>
+					<p>
+<code>ng-app</code> <code>ng-model</code> <code>ng-controller</code> <code>ng-submit</code> <br/><br/><code>ng-repeat</code> <code>ng-class</code> <code>ng-click</code>
+					</p>
+				</section>
+
+				<section>
+					<h3>Adding Angular to the Page</h3>
+					<p>
+						<a href="https://angularjs.org/">https://angularjs.org/</a>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<code>ng-app</code> tells angular what the root element of our application is
+					</p>
+
+				</section>
+
+				<section>
+					<h3>Test to make sure Angular is working</h3>
+					<p>
+						We can use <code>ng-model</code> to bind it to a property.
+					</p>
+					<p>
+						<small>Make sure you undo your test when you're done!</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>ng-app and ng-controller</h3>
+					<p>
+						<code>ng-app="todoApp"</code><br/>Defines the application module name to load
+					</p>
+					<p>
+						<code>ng-controller="todoCtrl"</code><br/>The behavior of content under this element will be managed using the todoCtrl defined in app.js.
+					</p>
+				</section>
+
+				<section>
+					<h3>Add Todos</h3>
+					<p>Let's create a list of todos!</p>
+				</section>
+
+				<section>
+					<h3>ng-repeat</h3>
+					<p>
+						We can use <code>ng-repeat</code> to iterate over our todos.
+					</p>
+				</section>
+
+				<section>
+					<h3>Add new todos</h3>
+					<p>
+						<code>addTodos()</code>
+					</p>
+				</section>
+
+				<section>
+					<h3>What is scope?</h3>
+					<p><code>$scope</code> is the glue between application controller and the view.</p>
+				</section>
+
+				<section>
+					<h3>Remove Todos</h3>
+					<p>
+						<code>removeTodo()</code>
+					</p>
+				</section>
+
+				<section>
+					<h3>Mark Complete</h3>
+					<ol>
+						<li>We can use <code>ng-model</code> on the checkbox to change <br/>the completed status.</li>
+						<li>We can use <code>ng-class</code> to add the "complete" class <br/>to style our rows.</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3><span class="red">Bonus:</span> Clear Completed</h3>
+					<p><code>filter()</code> selects a subset of items from an array and returns it as a new array.</p>
+					<small><a href="https://docs.angularjs.org/api/ng/filter/filter">https://docs.angularjs.org/api/ng/filter/filter</a></small>
+				</section>
+
+				<section>
+					<h3>Other ideas for your todo app:</h3>
+					<ul>
+						<li>Sort your todos with <a href="https://docs.angularjs.org/api/ng/filter/filter">filters</a><br/><small>(https://docs.angularjs.org/api/ng/filter/filter)</small></li>
+						<li>Mark all as complete</li>
+						<li>List how many items are left</li>
+						<li>Check <a href="http://todomvc.com/examples/angularjs/">TodoMVC</a> for more ideas and examples<br/><small>(http://todomvc.com/examples/angularjs/)</small></li>
+					</ul>
+				</section>
+
+                <section class="has-dark-background" data-background="http://i.giphy.com/rOTGSPxvJJY7m.gif" data-background-color="#000">
+                </section>
+
+				<section>
+					<h2>Questions?</h2>
+				</section>
+
+				<section>
+					<h2><img src="/img/ionic.png" alt="Ionic Framework" style="width: 60%;"></h2>
+					<p>
+						HTML5 native app development framework that uses Sass and Angular.js for iOS and Android.
+					</p>
+					<p>
+						<a href="http://ionicframework.com/">ionicframework.com</a><br/>
+						<small>Tutorial: <a href="https://thinkster.io/ionic-framework-tutorial/">https://thinkster.io/ionic-framework-tutorial/</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>AngularJS <span class="red">2.0</span></h2>
+					<p>
+						AngularJS is being rewritten in version 2.0 but don't let that stop you from learning it now.
+					</p>
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+					<ul>
+						<li>
+							<a href="https://egghead.io/articles/new-to-angularjs-start-learning-here">Egghead.io</a><br/>
+							<small>(https://egghead.io/articles/new-to-angularjs-start-learning-here)</small>
+						</li>
+						<li>
+							<a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">Shaping up with Angular.js</a><br/>
+							<small>(https://www.codeschool.com/courses/shaping-up-with-angular-js)</small>
+						</li>
+						<li>
+							<a href="https://thinkster.io">Thinkster.io</a><br/>
+							<small>(https://thinkster.io)</small>
+						</li>
+						<li>
+							<a href="http://www.reddit.com/r/angularjs">Angular.js Subreddit</a><br/>
+							<small>(http://www.reddit.com/r/angularjs)</small>
+						</li>
+						<li>
+							<a href="https://scotch.io/?s=angular">Scotch.io</a><br/>
+							<small>(https://scotch.io/?s=angular)</small>
+						</li>
+						<li>
+							<a href="http://foundation.zurb.com/apps/index.html">Foundation for Apps</a><br/>
+							<small>(http://foundation.zurb.com/apps/index.html)</small>
+						</li>
+					</ul>
+				</section>
+
+                <section class="has-dark-background" data-background="http://i.giphy.com/ToMjGpShDp8dhaGxDu8.gif" data-background-color="#000">
+                    <h2>Thanks!</h2>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
